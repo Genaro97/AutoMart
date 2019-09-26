@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>AutoMart</title>
+</head>
+<body>
+    <h1>Bienvenido a AutoMart</h1>
+    {% for auto in autos %}
+    <p>{{ auto.nombre }}</p>
+    <p>{{ auto.modelo }}</p>
+    <p>{{ auto.precio }}</p>
+    <p>{{ auto.color }}</p>
+{% endfor %}
+</body>
+</html>

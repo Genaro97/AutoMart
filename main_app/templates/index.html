@@ -1,15 +1,22 @@
+{% load staticfiles %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <title>AutoMart</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'estilos.css' %}"/>
 </head>
 <body>
     <h1>Bienvenido a AutoMart</h1>
     {% for auto in autos %}
-    <p>{{ auto.nombre }}</p>
-    <p>{{ auto.modelo }}</p>
-    <p>{{ auto.precio }}</p>
-    <p>{{ auto.color }}</p>
-{% endfor %}
+       <p>{{ auto.nombre }}</p>
+       <p>{{ auto.modelo }}</p>
+       {% if auto.precio > 0 %}
+        <p>{{ auto.precio }}</p>
+        {% else %}
+            <p>Auto de colección</p>
+        {% endif %}
+        <p>{{ auto.color }}</p>
+        <hr />
+    {% endfor %}
 </body>
 </html>
